@@ -1,0 +1,84 @@
+.nav__content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-self:center
+}
+
+.nav__links{
+   display: flex;
+   justify-content: space-around;
+   gap:40px;
+   margin-right: 40px;
+   
+}
+.nav__links  a{
+  font-size: 15px;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+  color: #000;
+}
+.nav__message{
+ display: flex;
+ flex-direction: row;
+ margin-right: 20px;
+ align-items: center;
+
+}
+.nav__message .logo3{
+    margin-top: -12px;
+    margin-right: -12px;
+    z-index: 1;
+}
+
+.nav__doctorName{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin-right: 20px;
+}
+.nav__doctorName img{
+    margin-right: 10px;
+}
+.nav__doctorName span{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.languages{
+    position: absolute;
+    top: -3px;
+    margin-left: 560px;
+}
+
+.languages button {
+    cursor: pointer;
+}
+
+.languages .btn_ru{
+    width: 30px;
+    height: 25px;
+    background-color: rgb(199, 231, 241);
+    border: none;
+    border-radius: 4px;
+}
+.languages .btn_en{
+    width: 30px;
+    height: 25px;
+    background-color: rgb(244, 242, 215);
+    border: none;
+    border-radius: 4px;
+}
+.showInfo{
+    background-color: rgb(247, 245, 242);
+    width: 28px;
+    border: none;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+.showInfo img{
+    margin: 0;
+}
