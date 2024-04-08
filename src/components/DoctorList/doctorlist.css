@@ -1,0 +1,62 @@
+.doctorlist{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 85px;
+    /* border-radius: 10px;
+    box-shadow: -3px 1px 8px 6px rgba(185,179,179,0.63);
+    opacity: 0px; */
+}
+
+.status{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 45px;
+    margin-bottom: 45px;
+    
+}
+.status button{
+    width: 130px;
+    height: 25px;
+    padding: 5px;
+    border: none;
+    color: #464242;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+
+}
+.doctorCard{
+  margin-bottom: 40px;
+}
+
+.doctor_block{
+    width: 1000px;
+    height: 250px;
+    margin:0 auto;
+    border-radius: 10px;
+    box-shadow: -3px 1px 8px 6px rgba(185,179,179,0.63);
+    opacity: 0px;
+    padding: 60px 250px 200px;
+    margin-top: 20px;
+    position: relative;
+
+}
+.doctor_block button {
+    width: 140px;
+    height: 28px;
+    border-radius: 5px;
+    border: transparent;
+    cursor: pointer;
+}
+
+.doctorlist .status button.active {
+    background-color: #F6F8FB;
+}
+
+.doctor_img{
+   position: absolute;
+   left: 95px;
+   top: 65px;
+}

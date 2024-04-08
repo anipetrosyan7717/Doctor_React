@@ -10,5 +10,10 @@
     "text9": "To make an appointment with a doctor",
     "text10": "More than 1,500 doctors and more than 50 different specializations",
     "text11": "Sign up",
-    "text12": "Sign up"
+    "text12": "Sign up",
+    "status": {
+        "cancelled":"postpened",
+        "future":"planned",
+        "past":"completed"
+    }
 }

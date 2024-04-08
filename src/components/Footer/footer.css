@@ -1,0 +1,44 @@
+.footer{
+    max-width: 1200px;
+    height: 445px;
+    top: 2280px;
+    margin: 0 auto ;
+    padding-top: 210px;
+    margin-bottom: 0px;
+    color: #000;
+    background-color: #433e3e;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+    padding-top: 55px;
+    gap: 25px;
+    line-height:30px;
+    color: #fff;
+    
+}
+
+.div_footer_1{
+    width:227px;
+    height: 287px;
+    
+    
+    }
+    
+    .div_footer_{
+        width:227px;
+        height: 287px;
+     ;
+       
+       
+    }
+    
+    .div_footer_3{
+        width:227px;
+        height: 287px;
+      
+       
+        
+    }
+    

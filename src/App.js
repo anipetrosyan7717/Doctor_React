@@ -1,29 +1,33 @@
 import './App.css';
-import React, { createContext,useContext,useState} from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import BlockDiv from './components/BlockDiv/BlockDiv'
+import DoctorList from './components/DoctorList/DoctorList';
+import Footer from './components/Footer/Footer';
+
+
 
 export const TranslationContext = React.createContext({});
 
-export const TranslationProvider = ({children}) => {
-    const [translation, setTranslation] = React.useState({});
+export const TranslationProvider = ({ children }) => {
+  const [translation, setTranslation] = React.useState({});
 
-    const setLanguage = async (language) => {
-      const translationSource = await import(`./translation/lang.${language}.json`);
+  const setLanguage = async (language) => {
+    const translationSource = await import(`./translation/lang.${language}.json`);
 
-      setTranslation(translationSource);
-    };
+    setTranslation(translationSource);
+  };
 
-    React.useEffect(() => {
-      setLanguage('ru');  
-    }, []);
+  React.useEffect(() => {
+    setLanguage('ru');
+  }, []);
 
-    return (
-        <TranslationContext.Provider value={{translation, setLanguage}}>
-            {children}
-        </TranslationContext.Provider>
-    );
+  return (
+    <TranslationContext.Provider value={{ translation, setLanguage }}>
+      {children}
+    </TranslationContext.Provider>
+  );
 };
 
 export default function App() {
@@ -34,7 +38,9 @@ export default function App() {
         <Header />
         <Main />
         <BlockDiv />
+        <DoctorList />
+        <Footer />
       </TranslationProvider>
     </div>
-  );
+  )
 }
