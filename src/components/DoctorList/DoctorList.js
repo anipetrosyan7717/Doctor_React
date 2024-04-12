@@ -1,9 +1,16 @@
 import './doctorlist.css'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import doctorface from '../doctorface.png'
+import { Link } from 'react-router-dom';
 
 import { TranslationContext } from '../../App';
-import { Link } from 'react-router-dom';
+
+
+const medicalEventStatus = {
+    past: 'past',
+    future: 'future',
+    cancelled: 'cancelled',
+};
 
 export default function DoctorList() {
     const { translation } = React.useContext(TranslationContext);
@@ -23,31 +30,37 @@ export default function DoctorList() {
         { id: "10", name: "Марта Волков", position: "pediatr", year: "14", status: "past" }
     ]
 
-    // const getuttonProps = (btnStatus) => {
-    //     return {
-    //         onClick: () => setselectedStatus(btnStatus),
-    //         className: selectedStatus === btnStatus ? 'active': '',
-    //     };
-    // };
+    const [selectedStatus, setSelectedStatus] = useState(medicalEventStatus.future);
 
+
+    const getuttonProps = (btnStatus) => {
+        console.log(selectedStatus, btnStatus);
+        return {
+            onClick: () => setSelectedStatus(btnStatus),
+            className: selectedStatus === btnStatus ? 'active': '', 
+
+        };
+    };
  
 
     return (
         <div className='doctorlist'>
             <div className='status'>
-                <button>{status.future}</button>
-                <button>{status.cancelled}</button>
-                <button>{status.past}</button>
+                <button {...getuttonProps(medicalEventStatus.future)}>{status.future}</button>
+                <button {...getuttonProps(medicalEventStatus.cancelled)}>{status.cancelled}</button>
+                <button {...getuttonProps(medicalEventStatus.past)}>{status.past}</button>
             </div>
             <div className='doctorCard'>
                 {
-                    doctors.map(selected => (
+                    doctors.map(doctor => doctor.status === selectedStatus && (
                         <div className='doctor_block' >
                             <img src={doctorface} alt="doctor_face" className='doctor_img' />
-                            <h1>{selected.name}</h1>
-                            <p>{selected.position}</p>
-                            <p>{selected.year}</p>
-                            <button>{selected.status}</button>
+                            <Link to={`/doctor/${doctor.id}`}>
+                                <h3>{doctor.name}</h3>
+                            </Link>
+                            <p>{doctor.position}</p>
+                            <p>{doctor.year}</p>
+                            <div className={`doctor-status-name ${doctor.status}`}>{status[doctor.status]}</div>
                         </div>
                     ))
                 }

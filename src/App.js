@@ -7,6 +7,7 @@ import DoctorList from './components/DoctorList/DoctorList';
 import Footer from './components/Footer/Footer';
 import { Routes, Route, Link } from 'react-router-dom'
 import DoctorInfo from './screens/DoctorInfo';
+import Preview from './screens/Preview';
 
 
 
@@ -37,9 +38,12 @@ export default function App() {
     <div className="App">
       <TranslationProvider>
         <Header />
-        <Main/>
-        <BlockDiv/>
-        <DoctorList/>
+        <Routes>
+          <Route path='/'>
+            <Route index element={<Preview />} />
+            <Route path='doctor/:id' element={<DoctorInfo />} />
+          </Route>
+        </Routes>
         <Footer />
       </TranslationProvider>
     </div>

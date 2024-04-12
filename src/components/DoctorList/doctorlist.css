@@ -50,13 +50,31 @@
     border: transparent;
     cursor: pointer;
 }
-/* 
+
 .doctorlist .status button.active {
-    background-color: #F6F8FB;
-} */
+    background-color: #e3e8ee;
+}
 
 .doctor_img{
    position: absolute;
    left: 95px;
    top: 65px;
+}
+
+.doctor-status-name {
+    max-width: fit-content;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.doctor-status-name.future {
+    background-color: orange;
+}
+
+.doctor-status-name.past {
+    background-color: red;
+}
+
+.doctor-status-name.cancelled {
+    background-color: green;
 }
