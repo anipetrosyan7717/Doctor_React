@@ -1,10 +1,12 @@
 import './App.css';
-import React, { createContext, useContext, useState } from 'react'
+import React from 'react'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import BlockDiv from './components/BlockDiv/BlockDiv'
 import DoctorList from './components/DoctorList/DoctorList';
 import Footer from './components/Footer/Footer';
+import { Routes, Route, Link } from 'react-router-dom'
+import DoctorInfo from './screens/DoctorInfo';
 
 
 
@@ -31,14 +33,13 @@ export const TranslationProvider = ({ children }) => {
 };
 
 export default function App() {
-
   return (
     <div className="App">
       <TranslationProvider>
         <Header />
-        <Main />
-        <BlockDiv />
-        <DoctorList />
+        <Main/>
+        <BlockDiv/>
+        <DoctorList/>
         <Footer />
       </TranslationProvider>
     </div>

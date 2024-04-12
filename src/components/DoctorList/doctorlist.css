@@ -50,10 +50,10 @@
     border: transparent;
     cursor: pointer;
 }
-
+/* 
 .doctorlist .status button.active {
     background-color: #F6F8FB;
-}
+} */
 
 .doctor_img{
    position: absolute;
