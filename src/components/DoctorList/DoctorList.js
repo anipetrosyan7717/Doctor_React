@@ -47,9 +47,9 @@ export default function DoctorList() {
     return (
         <div className='doctorlist'>
             <div className='status'>
-                <button {...getbuttonProps(medicalEventStatus.future)}>{t.future}</button>
-                <button {...getbuttonProps(medicalEventStatus.cancelled)}>{t.cancelled}</button>
-                <button {...getbuttonProps(medicalEventStatus.past)}>{t.past}</button>
+                <button {...getbuttonProps(medicalEventStatus.future)}>future</button>
+                <button {...getbuttonProps(medicalEventStatus.cancelled)}>cancelled</button>
+                <button {...getbuttonProps(medicalEventStatus.past)}>past</button>
             </div>
             <div className='doctorCard'>
                 { 

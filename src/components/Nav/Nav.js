@@ -33,7 +33,7 @@ import { useTranslation } from 'react-i18next';
 export default function Nav() {
     // const { translation, setLanguage } = React.useContext(TranslationContext);
     // const { text1, text2, text3 } = translation;
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation(); 
 
     return (
         <div className='nav__content'>
