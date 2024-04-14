@@ -2,8 +2,9 @@ import './main.css'
 import React from 'react'
 import doctorImage from '../doctorImage.png'
 // import publicAPI from '../../services/api/publicAPI';
+import { useTranslation } from 'react-i18next'
 
-import { TranslationContext } from '../../App';
+// import { TranslationContext } from '../../App';
 
 export default function Main(){
     // const [data, setData] = useState([])
@@ -29,19 +30,20 @@ export default function Main(){
 
 
 
-    const { translation, setLanguage } = React.useContext(TranslationContext);
-    const { text5, text6, text7, text8 } = translation;
+    // const { translation, setLanguage } = React.useContext(TranslationContext);
+    // const { text5, text6, text7, text8 } = translation;
+    const { t } = useTranslation()
     return (
         <div className='main__content'>
 
             <div className='main__text__content'>
                 {/* take the information from here */}
-                <h1 className='main_h1'>{text5}
+                <h1 className='main_h1'>{t("text5")}
                 </h1>
-                 <p className='main_p'>{text6}
+                 <p className='main_p'>{t("text6")}
                 </p>
-                <button className='register'>{text7}</button>
-                <button className='how_is_working'>{text8}</button>
+                <button className='register'>{t("text7")}</button>
+                <button className='how_is_working'>{t("text8")}</button>
             </div>
             <div className='main__image'>
             <img src={doctorImage} className='doctor__image' alt="doctor_img"/>

@@ -2,8 +2,9 @@ import './doctorlist.css'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import doctorface from '../doctorface.png'
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import { TranslationContext } from '../../App';
+// import { TranslationContext } from '../../App';
 
 
 const medicalEventStatus = {
@@ -13,9 +14,9 @@ const medicalEventStatus = {
 };
 
 export default function DoctorList() {
-    const { translation } = React.useContext(TranslationContext);
-    const { status = {} } = translation;
-
+    // const { translation } = React.useContext(TranslationContext);
+    // const { status = {} } = translation;
+    const { t } = useTranslation()
 
     const doctors = [
         { id: "1", name: "Ольга Никитина", position: "pediatr", year: "12", status: "future" },
@@ -33,7 +34,7 @@ export default function DoctorList() {
     const [selectedStatus, setSelectedStatus] = useState(medicalEventStatus.future);
 
 
-    const getuttonProps = (btnStatus) => {
+    const getbuttonProps = (btnStatus) => {
         console.log(selectedStatus, btnStatus);
         return {
             onClick: () => setSelectedStatus(btnStatus),
@@ -46,12 +47,12 @@ export default function DoctorList() {
     return (
         <div className='doctorlist'>
             <div className='status'>
-                <button {...getuttonProps(medicalEventStatus.future)}>{status.future}</button>
-                <button {...getuttonProps(medicalEventStatus.cancelled)}>{status.cancelled}</button>
-                <button {...getuttonProps(medicalEventStatus.past)}>{status.past}</button>
+                <button {...getbuttonProps(medicalEventStatus.future)}>{t.future}</button>
+                <button {...getbuttonProps(medicalEventStatus.cancelled)}>{t.cancelled}</button>
+                <button {...getbuttonProps(medicalEventStatus.past)}>{t.past}</button>
             </div>
             <div className='doctorCard'>
-                {
+                { 
                     doctors.map(doctor => doctor.status === selectedStatus && (
                         <div className='doctor_block' >
                             <img src={doctorface} alt="doctor_face" className='doctor_img' />
@@ -60,7 +61,7 @@ export default function DoctorList() {
                             </Link>
                             <p>{doctor.position}</p>
                             <p>{doctor.year}</p>
-                            <div className={`doctor-status-name ${doctor.status}`}>{status[doctor.status]}</div>
+                            <div className={`doctor-status-name ${doctor.status}`}>{t(`status.${doctor.status}`)}</div>
                         </div>
                     ))
                 }

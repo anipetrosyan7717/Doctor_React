@@ -72,9 +72,10 @@
 }
 
 .doctor-status-name.past {
-    background-color: red;
+    background-color: green;
+    
 }
 
 .doctor-status-name.cancelled {
-    background-color: green;
+    background-color: red;
 }

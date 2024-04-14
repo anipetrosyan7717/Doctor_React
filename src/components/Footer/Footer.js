@@ -4,9 +4,11 @@ import logo from '../logo.png'
 import face from '../face.png'
 import ista from '../ista.png'
 import youtube from '../youtube.png'
+import { useTranslation } from 'react-i18next'
 
 
 export default function Footer(){
+    const { t } = useTranslation()
 
     return(
     <div>
